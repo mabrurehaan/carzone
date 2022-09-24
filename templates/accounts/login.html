@@ -3,6 +3,8 @@
 {% block title %} | Login {% endblock %}
 {% block content %}
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 
 
 <div class="sub-banner overview-bgi">
@@ -26,7 +28,7 @@
                 <div class="form-section">
                     <div class="logo-2">
                         <a href="index.html">
-                            <img src="{% static 'img/logos/black-logo.png' %}" alt="logo">
+                            <img src="{% static 'img/logos/DAElogo.png' %}" alt="logo">
                         </a>
                     </div>
                     <h3>Sign into your account</h3>
