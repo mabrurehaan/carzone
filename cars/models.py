@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
+from django_resized import ResizedImageField
 
 # Create your models here.
 class Car(models.Model):
@@ -82,10 +83,11 @@ class Car(models.Model):
     fuel_Type = models.CharField(choices=fuel_choices, max_length=10)
     fuel_Tank_Capacity = models.IntegerField()
     name_of_Owner = models.CharField(max_length=100)
+    no_of_Passenger = models.PositiveSmallIntegerField(default=0, blank=True)
     passenger_Information = RichTextField()
     driver_Name = models.CharField(max_length=200)
     blood_Group = models.CharField(choices=blood_choices, max_length=20)
-    driver_Photo = models.ImageField(upload_to='driver/%Y/%m/%d/')
+    driver_Photo = ResizedImageField(size=[600, 600], crop=['middle', 'center'], upload_to='picture/', blank=True)
     driver_Mobile_No = models.IntegerField()
     licence_No = models.CharField(max_length=150)
     date_of_Birth = models.DateField(max_length=150)

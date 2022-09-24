@@ -30,11 +30,11 @@
                         <div class="pull-left">
                             <h3>{{ single_car.registration_No }}</h3>
                             <h6>
-                                <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                                <i class="flaticon-phone"></i> 0{{single_car.driver_Mobile_No}} ({{single_car.driver_Name}}) 
                             </h6>
                         </div>
                         <div class="pull-right">
-                            <h3><span>$2825.00</span></h3>
+                            <h3><span></span></h3>
                         </div>
                     </div>
                     <div id="carDetailsSlider" class="carousel car-details-sliders slide mb-40">
@@ -131,141 +131,13 @@
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <ul>
                                                 <li>
-                                                    Adaptive Cruise Control
+                                                    {{single_car.features}}
                                                 </li>
-                                                <li>
-                                                    Airbags
-                                                </li>
-                                                <li>
-                                                    Air Conditioning
-                                                </li>
-                                                <li>
-                                                    Alarm System
-                                                </li>
-                                                <li>
-                                                    Anti-theft Protection
-                                                </li>
-                                                <li>
-                                                    Audio Interface
-                                                </li>
-                                                <li>
-                                                    Automatic Climate Control
-                                                </li>
-                                                <li>
-                                                    Automatic Headlights
-                                                </li>
-                                                <li>
-                                                    Auto Start/Stop
-                                                </li>
-                                                <li>
-                                                    Bi-Xenon Headlights
-                                                </li>
-                                                <li>
-                                                    Audio Interface
-                                                </li>
-                                                <li>
-                                                    Bluetooth Handset
-                                                </li>
-                                                <li>
-                                                    BOSE Surround Sound
-                                                </li>
-                                                <li>
-                                                    Burmester Surround Sound
-                                                </li>
-                                                <li>
-                                                    CD/DVD Autochanger
-                                                </li>
+                                    
+                                                
                                             </ul>
                                         </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <ul>
-                                                <li>
-                                                    CDR Audio
-                                                </li>
-                                                <li>
-                                                    Cruise Control
-                                                </li>
-                                                <li>
-                                                    Direct Fuel Injection
-                                                </li>
-                                                <li>
-                                                    Electric Parking Brake
-                                                </li>
-                                                <li>
-                                                    Floor Mats
-                                                </li>
-                                                <li>
-                                                    Garage Door Opener
-                                                </li>
-                                                <li>
-                                                    Leather Package
-                                                </li>
-                                                <li>
-                                                    Locking Rear Differential
-                                                </li>
-                                                <li>
-                                                    Luggage Compartments
-                                                </li>
-                                                <li>
-                                                    Manual Transmission
-                                                </li>
-                                                <li>
-                                                    Navigation Module
-                                                </li>
-                                                <li>
-                                                    Online Services
-                                                </li>
-                                                <li>
-                                                    ParkAssist
-                                                </li>
-                                                <li>
-                                                    Porsche Communication
-                                                </li>
-                                                <li>
-                                                    CD/DVD Autochanger
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <ul>
-                                                <li>
-                                                    Power Steering
-                                                </li>
-                                                <li>
-                                                    Reversing Camera
-                                                </li>
-                                                <li>
-                                                    Roll-over Protection
-                                                </li>
-                                                <li>
-                                                    Seat Heating
-                                                </li>
-                                                <li>
-                                                    Seat Ventilation
-                                                </li>
-                                                <li>
-                                                    Sound Package Plus
-                                                </li>
-                                                <li>
-                                                    Sport Chrono Package
-                                                </li>
-                                                <li>
-                                                    Steering Wheel Heating
-                                                </li>
-                                                <li>
-                                                    Tire Pressure Monitoring
-                                                </li>
-                                                <li>
-                                                    Universal Audio Interface
-                                                </li>
-                                                <li>
-                                                    Voice Control System
-                                                </li>
-                                                <li>
-                                                    Wind Deflector
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -280,11 +152,11 @@
                 <div class="sidebar-right">
                     <!-- Advanced search start -->
                     <div class="widget advanced-search d-none-992">
-                        <button class="btn btn-outline-danger bomd btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Send message</button>
+                        <button class="btn btn-outline-danger bomd btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Go For Requisition</button>
 
 
                         <br>
-                        <h3 class="sidebar-title">Refine Your Search</h3>
+                        <h3 class="sidebar-title">More About Vehicle</h3>
                         <ul>
                             <li>
                                 <span>Vehicle Category:</span>{{single_car.type_of_Vehicle}}
@@ -311,7 +183,7 @@
                                 <span>Chassis No:</span>{{single_car.chassis_No}}
                             </li>
                             <li>
-                                <span>Passengers:</span>{{single_car.name_of_Owner}}
+                                <span>No of Passengers:</span>{{single_car.no_of_Passenger}}
                             </li>
                             <li>
                                 <span>Fuel Tank Capacity:</span>{{single_car.fuel_Tank_Capacity}}
@@ -387,10 +259,11 @@
                                   <label for="name" class="col-form-label">Mension your Journey Start and End Date</label>
                                   <div class="row">
                                     <div class="col">
-                                      <input type="date" name="start_date" class="form-control" placeholder="City" required>
+                                      <input type="datetime-local" name="start_date" class="form-control" placeholder="City" required>
                                     </div>
+                                
                                     <div class="col">
-                                      <input type="date" name="end_date" class="form-control" placeholder="State" required>
+                                      <input type="datetime-local" name="end_date" class="form-control" placeholder="State" required>
                                     </div>
                                   </div>
                                 </div>
